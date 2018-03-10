@@ -18,6 +18,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
+import java.util.function.Predicate;
 
 @Component
 public class ImgToVideoRunnable implements Runnable{
@@ -97,6 +98,11 @@ public class ImgToVideoRunnable implements Runnable{
                                 .append(tmpToMp4);
                         logger.info("开始生成"+tmpToMp4);
                         logger.debug(runtimeLocal.execute(makeVideo.toString()));
+                    }
+                    Predicate<String> isExist = (n) -> n.endsWith(".mp4");
+                    if(!Arrays.stream(visitor.list()).anyMatch(isExist)){
+                        logger.error("生成视频失败！检查是否安装了ffmpeg并重启应用");
+                        return;
                     }
                     new File(visitor,"closeView.temp").delete();
                     new File(visitor,"farView.temp").delete();
