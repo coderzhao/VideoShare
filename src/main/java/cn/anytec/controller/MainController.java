@@ -37,7 +37,7 @@ public class MainController{
 
 
     //添加游客Id
-    @RequestMapping(value = "/anytec/addVisitorId")
+    @RequestMapping(value = "/anytec/addVisitorId",method = RequestMethod.POST)
     @ResponseBody
     public Map<String,Object> addVisitorId(@RequestParam("visitorId")String visitorId,@RequestParam("place")String place){
         Map<String,Object> resultMap = new HashMap<>();
@@ -54,7 +54,7 @@ public class MainController{
     }
 
     //移除游客Id
-    @RequestMapping(value = "/anytec/removeVisitorId")
+    @RequestMapping(value = "/anytec/removeVisitorId",method = RequestMethod.POST)
     @ResponseBody
     public Map<String, Object> removeVisitorId(@RequestParam("visitorId")String visitorId,@RequestParam("place")String place){
         Map<String,Object> resultMap = new HashMap<>();
@@ -68,7 +68,7 @@ public class MainController{
     }
 
     //清空体验区游客Ids
-    @RequestMapping(value = "/anytec/clearVisitorIds")
+    @RequestMapping(value = "/anytec/clearVisitorIds",method = RequestMethod.POST)
     @ResponseBody
     public Map<String, Object> clearVisitorIds(@RequestParam("place")String place){
         Map<String,Object> resultMap = new HashMap<>();
@@ -82,7 +82,7 @@ public class MainController{
     }
 
     //根据Id和地点获取视频地址
-    @RequestMapping(value = "/anytec/getVideoList")
+    @RequestMapping(value = "/anytec/getVideoList",method = RequestMethod.GET)
     @ResponseBody
     public Map<String,Object> getVideoList(@RequestParam("visitorId")String visitorId,@RequestParam("place")String place){
         Map<String,Object> resultMap = new HashMap<>();
@@ -97,7 +97,7 @@ public class MainController{
     }
 
     //开始录制体验区视频
-    @RequestMapping(value = "/anytec/startAreaVideo")
+    @RequestMapping(value = "/anytec/startAreaVideo",method = RequestMethod.POST)
     @ResponseBody
     public Map<String,Object> startAreaVideo(@RequestParam("place")String place){
         Map<String,Object> resultMap = new HashMap<>();
@@ -116,7 +116,7 @@ public class MainController{
     }
 
     //停止录制体验区视频
-    @RequestMapping(value = "/anytec/stopAreaVideo")
+    @RequestMapping(value = "/anytec/stopAreaVideo",method = RequestMethod.POST)
     @ResponseBody
     public Map<String,Object> stopAreaVideo(@RequestParam("place")String place){
         Map<String,Object> resultMap = new HashMap<>();

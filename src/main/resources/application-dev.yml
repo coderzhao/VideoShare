@@ -1,7 +1,10 @@
 config:
   #服务器网段
   network_segment: 192.168.10
+  #康耐德Ip
   io_module_ip: 192.168.10.213
+  #康耐德Port
+  io_module_port: 502
 video:
 #滑梯各段视频保存路径
   path: /home/videoShare/slider/
@@ -52,6 +55,7 @@ camera:
     username: admin
     password: n-tech123@
     port: 8000
+#地点标识
 place:
   waterSlide: waterSlide
   bumperCar: bumperCar

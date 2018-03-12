@@ -136,7 +136,7 @@ public class MyApplicationRunner implements ApplicationRunner {
 
         Socket socket = null;
         try {
-            socket = new Socket(config.getIo_module_ip(),502);
+            socket = new Socket(config.getIo_module_ip(),config.getIo_module_port());
             socket.setKeepAlive(true);
 
         } catch (IOException e) {

@@ -13,11 +13,8 @@ public class GeneralConfig {
     private String network_segment;
     @Value("${config.io_module_ip}")
     private String io_module_ip;
-
-    public String getIo_module_ip() {
-        return io_module_ip;
-    }
-
+    @Value("${config.io_module_port}")
+    private int io_module_port;
     @Value("${camera.close.ip}")
     private String closeCameraIp;
     @Value("${camera.close.username}")
@@ -76,7 +73,10 @@ public class GeneralConfig {
     public String getNetwork_segment() {
         return network_segment;
     }
-
+    public String getIo_module_ip() {
+        return io_module_ip;
+    }
+    public int getIo_module_port() {return io_module_port;}
     public String getVideoContext() {
         return videoContext;
     }
